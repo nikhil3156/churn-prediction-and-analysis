@@ -1,129 +1,138 @@
-Customer Churn Analysis & Prediction
-🔹 Problem Statement
+📊 Customer Churn Analysis & High-Risk Customer Prediction
+1. Introduction
 
-Telecom companies lose significant revenue due to customer churn. The objective of this project is to identify churn patterns, predict high-risk customers, and provide actionable insights that help the business reduce churn and improve retention.
+Customer churn is a major challenge for subscription-based businesses, as losing customers directly impacts revenue and long-term growth.
+The goal of this project is to understand the key drivers of customer churn and build a machine learning model to predict high-risk customers early, so that the business can take preventive action before customers leave.
 
-🔹 Dataset
+This project combines exploratory data analysis (EDA), machine learning, and business insights, making it suitable for placements and internship evaluation.
 
-Source: Public Telecom Customer Churn Dataset
+2. Dataset Overview
 
-Size: ~7,000 customers
+Dataset: Telecom Customer Churn Dataset
 
-Key Columns:
+Records: ~7,000 customers
 
-CustomerID
+Target Variable: Churn (0 = Not Churned, 1 = Churned)
 
-MonthlyCharges
+Key features used in analysis:
 
 Tenure
 
+Monthly Charges
+
 Contract Type
 
-Payment Method
+Internet Service
 
-Churn (Actual)
+Senior Citizen
 
-Churn Probability (Predicted)
+Churn
 
-🔹 Tools & Technologies
+3. Exploratory Data Analysis (EDA)
 
-Python: Data cleaning, EDA, feature engineering
+The following EDA charts were created to understand customer behavior and identify churn patterns.
 
-Pandas & NumPy: Data manipulation
+3.1 Churn Distribution
 
-Scikit-learn: Churn prediction model
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/9fdfab6c7afaa7367e3012c332e20ce3684e4afa/Screenshot%20(190).png)
 
-SQL: Aggregations and KPI validation
+Insight:
+The dataset shows a clear imbalance between churned and non-churned customers, indicating that churn is a significant but not dominant event. This highlights the importance of early detection rather than reactive handling.
 
-Power BI: Interactive dashboard & KPIs
+3.2 Tenure vs Churn
 
-GitHub: Project documentation & version control
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/9fdfab6c7afaa7367e3012c332e20ce3684e4afa/Screenshot%20(191).png)
 
-🔹 Key Steps
-1️⃣ Data Cleaning
+Insight:
+Customers with low tenure (early months) have a much higher churn rate compared to long-tenure customers.
+This indicates that early customer experience is critical, and most churn happens before strong loyalty is built.
 
-Removed duplicates and invalid records
+3.3 Monthly Charges vs Churn
 
-Handled missing values using statistical methods
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/9fdfab6c7afaa7367e3012c332e20ce3684e4afa/Screenshot%20(192).png)
 
-Converted categorical variables into numerical format
+Insight:
+Customers with higher monthly charges show a noticeably higher churn rate.
+This suggests that pricing and perceived value play a major role in churn decisions, especially for customers who feel they are paying more than expected.
 
-2️⃣ Exploratory Data Analysis (EDA)
+3.5 Internet Service vs Churn
 
-Analyzed churn distribution
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/9fdfab6c7afaa7367e3012c332e20ce3684e4afa/Screenshot%20(193).png)
 
-Compared churn vs non-churn customers
+Insight:
+Churn behavior varies across internet service types. Certain services show higher churn, indicating service quality or pricing dissatisfaction linked to specific offerings.
 
-Studied relationship between tenure, charges, and churn
+3.6 Senior Citizen vs Churn
 
-3️⃣ Feature Engineering
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/9fdfab6c7afaa7367e3012c332e20ce3684e4afa/Screenshot%20(194).png)
 
-Created churn labels (0 = No, 1 = Yes)
+Insight:
+Senior citizens show a slightly higher churn tendency compared to non-senior customers.
+While not a primary churn driver, this demographic factor provides supporting insight for targeted retention strategies.
 
-Derived risk levels based on churn probability
+4. Machine Learning Model
 
-Engineered tenure groups and charge buckets
+A machine learning classification model was built to predict customer churn.
 
-4️⃣ Modeling & Prediction
+Model Outputs:
 
-Built a classification model to predict churn
+Predicted Churn (0 / 1)
 
-Generated churn probability for each customer
+Churn Probability
 
-Evaluated model using confusion matrix logic
+Risk Level (Low / Medium / High)
 
-5️⃣ Visualization (Power BI)
+The model enables the identification of high-risk customers before actual churn occurs, allowing the business to intervene early.
 
-KPI cards (Total Customers, Actual Churn, Predicted Churn)
+5. Final Dashboard (Business View)
 
-Actual vs Predicted Churn comparison
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/9fdfab6c7afaa7367e3012c332e20ce3684e4afa/Screenshot%20(172).png)
 
-Confusion Matrix
+The dashboard consolidates:
 
-Risk Level Distribution
+Actual churn vs predicted churn
 
-Churn Probability slicer for business decision-making
+High-risk customer identification
 
-🔹 Key Insights (MOST IMPORTANT)
+Revenue-related churn insights
 
-• High Monthly Charges increase churn:
-Customers paying higher-than-average monthly charges show significantly higher churn rates, especially on month-to-month contracts.
+Customer segmentation for decision-making
 
-• Tenure is a strong churn indicator:
-Customers with tenure less than 12 months churn the most, indicating early dissatisfaction.
+This dashboard is designed for management and business stakeholders, not just analysts.
 
-• Contract type drives retention:
-Month-to-month customers churn far more than annual or two-year contract customers, directly impacting revenue stability.
+6. Key Business Insights (Summary)
 
-• High-risk customers contribute major revenue risk:
-A small percentage of high-risk customers accounts for a large portion of potential revenue loss.
+Early churn is the biggest risk: Customers churn most in the initial months.
 
-🔹 Dashboard / Output
+High-paying customers are more likely to churn: Pricing sensitivity directly affects churn.
 
-📌 Power BI Dashboard includes:
+Month-to-month contracts drive churn: Long-term contracts improve retention.
 
-Actual vs Predicted Churn
+A small high-risk group causes major revenue loss: Predicting and acting early is critical.
 
-Confusion Matrix
+7. Conclusion & Business Recommendations
+Problem Identified
 
-Average Monthly Charge by Risk Level
+Customer churn is predictable, not random. It is driven primarily by tenure, pricing, and contract type.
 
-Churn Probability Threshold Slicer
+Recommended Business Actions
 
-![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/25382ca4c3a5eb6886ad59972a15e2f8c2f668a2/Screenshot%20(172).png)
+Focus retention efforts on high-risk customers identified by the model
 
-🔹 Conclusion
+Improve onboarding and engagement during the first few months
 
-This analysis clearly shows that churn is not random — it is driven by pricing, contract type, and customer tenure.
+Encourage customers to move from month-to-month to long-term contracts
 
-✅ Business Actions Recommended:
+Offer targeted discounts or plans to high-value customers with high churn probability
 
-Target high-risk customers with retention offers
+Final Outcome
 
-Incentivize long-term contracts over month-to-month plans
+By using churn prediction and data-driven insights, a company can:
 
-Offer personalized discounts for high-paying, low-tenure customers
+Reduce customer churn
 
-Use churn probability threshold to optimize retention cost vs benefit
+Protect revenue
 
-By acting on these insights, a company can reduce churn, protect revenue, and improve customer lifetime value.
+Improve customer lifetime value
+
+Make proactive, not reactive, decisions
