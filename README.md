@@ -110,7 +110,7 @@ Average Monthly Charge by Risk Level
 
 Churn Probability Threshold Slicer
 
-
+![image alt](https://github.com/nikhil3156/churn-prediction-and-analysis/blob/25382ca4c3a5eb6886ad59972a15e2f8c2f668a2/Screenshot%20(172).png)
 
 🔹 Conclusion
 
